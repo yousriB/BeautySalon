@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 45 45 45;
+
+    --card: 255 255 255;
+    --card-foreground: 45 45 45;
+
+    --popover: 255 255 255;
+    --popover-foreground: 45 45 45;
+
+    --primary: 255 169 185;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 248 249 250;
+    --secondary-foreground: 45 45 45;
+
+    --muted: 241 243 244;
+    --muted-foreground: 95 99 104;
+
+    --accent: 248 249 250;
+    --accent-foreground: 45 45 45;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --border: 218 220 224;
+    --input: 218 220 224;
+    --ring: 255 169 185;
+
+    --radius: 1rem;
+
+    --sidebar-background: 255 255 255;
+    --sidebar-foreground: 45 45 45;
+    --sidebar-primary: 255 169 185;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 248 249 250;
+    --sidebar-accent-foreground: 45 45 45;
+    --sidebar-border: 218 220 224;
+    --sidebar-ring: 255 169 185;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#F7FCFE] text-foreground font-nunito;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-semibold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-full font-semibold tracking-wide transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-12;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-600 bg-clip-text text-transparent;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFA9B9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF8FA3;
+}
